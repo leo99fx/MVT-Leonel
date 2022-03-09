@@ -16,7 +16,7 @@ def plantilla(self):
 
     familiar=familiar(nombre="", apellido="",dni=0)
 
-
+    #jasdksdf
     lista=[familiar]
     
     diccionario_de_datos={
