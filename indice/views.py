@@ -1,8 +1,7 @@
 from django.http import HttpResponse
-import random
-from datetime import datetime
-from django.template import Context, Template, loader
+from django.template import loader
 from indice.models import familiar
+import sqlite3
 
 # Create your views here.
 
@@ -15,9 +14,10 @@ def plantilla(self):
     template=loader.get_template("indice.html")
 
 
-    familiar1=familiar(nombre="Leonel", apellido="Fernandes",dni="41799417")
+    familiar=familiar(nombre="", apellido="",dni=0)
 
-    lista=[familiar1]
+
+    lista=[familiar]
     
     diccionario_de_datos={
         'lista': lista
