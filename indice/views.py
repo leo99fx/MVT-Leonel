@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
-from indice.models import familiar
+from indice.models import familiares
+import datetime
 import sqlite3
 
 # Create your views here.
@@ -14,9 +15,8 @@ def plantilla(self):
     template=loader.get_template("indice.html")
 
 
-    familiar=familiar(nombre="", apellido="",dni=0)
+    familiar=familiares(nombre="leonel", apellido="fernandes",dni=41799417,nacimiento=datetime.date(1999,4,6))
 
-    #jasdksdf
     lista=[familiar]
     
     diccionario_de_datos={
@@ -25,4 +25,5 @@ def plantilla(self):
 
     # context= Context(diccionario_de_datos)
     plantilla_preparada=template.render(diccionario_de_datos) #antes le pasa el context
+
     return HttpResponse(plantilla_preparada)
